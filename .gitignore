@@ -112,3 +112,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+data/original_datasets/kag2_spot_artists.zip
+data/original_datasets/kag_spot_artist_uris.zip
+data/original_datasets/tracks.zip
+data/pickled_dfs/artist_class_count_df.pkl
+data/pickled_dfs/artist_df.pkl
+data/pickled_dfs/class_type_reorg_df.pkl
+data/pickled_dfs/larger_spot_artist_id_class_count.pkl
+data/pickled_dfs/larger_spot_leftover_artists_df.pkl
+data/pickled_dfs/master_first_classes_with_stats.pkl
+data/pickled_dfs/master_song_df.pkl
+data/pickled_dfs/new_class_types_with_artists.pkl
+data/pickled_dfs/song_class_count_df.pkl
+data/pickled_dfs/songs_df.pkl
