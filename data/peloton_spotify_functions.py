@@ -7,6 +7,7 @@ import pickle
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import classification_report, accuracy_score, f1_score, plot_confusion_matrix
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 artist_df = pd.read_pickle("../../data/pickled_dfs/artist_df.pkl")
@@ -188,14 +189,39 @@ def diff_top_artists_and_songs(processed_data, orig_data):
     return artists_with_feats, songs_with_feats
 
 
+def low_med_high_labels(series, new_column_name, df):
+    """
+    Label Low, Medium, and High in a new series based on 25th and 75th percentile thresholds. 
+    To be used for numeric data conversion to categorical.
+    
+    Prerequisites:
+    - Create new series in output intended dataframe and use column title as new_column_name
+    
+    Inputs:
+    - series - Pandas Series containing numeric values to assess 25th and 75th percentiles
+    - new_column_name - Column title in DataFrame where Low, Medium, High will be placed
+    
+    Outputs:
+    - Low, Medium, High values in new_column_name based on 25th and 75th percentile thresholds
+    from series variable
+    """
+    # Assign variables to thresholds at 25th percentile and 75th percentile
+    twenty_five = np.nanpercentile(series, 25)
+    seventy_five = np.nanpercentile(series, 75)
+      
+    # Assign Low, Medium, High based on thresholds above
+    df.loc[series < twenty_five, new_column_name] = 'Low'
+    df.loc[((series >= twenty_five) & (series < seventy_five)), new_column_name] = 'Medium'
+    df.loc[series >= seventy_five, new_column_name] = 'High'
+    
 # Plotting
-def plot_scatter(data, x, y, hue, legend, artist_or_song, subset_title):
+def plot_scatter(data, x, y, hue, by, legend, artist_or_song, subset_title):
     plt.figure(figsize=(20,10))
 
     sns.scatterplot(data= data, x= x, y= y, hue= hue, legend= legend)
 
 
-    plt.title((f'{artist_or_song} Class Count vs Class Percentage in {subset_title}'), fontsize=20, fontweight="bold")
+    plt.title((f'{artist_or_song} Class Count vs Class Percentage in {subset_title} by {by}'), fontsize=20, fontweight="bold")
     plt.xlabel((f'{artist_or_song} Class Count'), fontsize=14)
     plt.xticks(fontsize=14)
     plt.ylabel((f'{artist_or_song} Class Percentage'), fontsize=14)
