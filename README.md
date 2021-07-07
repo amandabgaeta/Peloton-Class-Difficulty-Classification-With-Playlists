@@ -16,7 +16,9 @@ Recreation of the dataset can be accomplished by utilizing the files in the data
 
 ### Data Processing
 
-Notebook.pdf includes cleansing, editing, functions, and feature engineering that was utilized in mode iterations.
+Notebook.pdf includes cleansing, editing, functions, and feature engineering that was utilized in model iterations.
+
+Custom functions and pickle files needed are in /data/peloton_spotify_functions.py. This is run in the final notebook.
 
 The /notebooks/1_modeling folder has variations of data analysis, model approaches, and notebook iterations that were used to get to the /notebooks/1_modeling and /notebooks/2_winning models and analysis were used to get to /notebooks/3_models_with_writeups
 1_Winning_Decision_Tree_manual.ipynb.
