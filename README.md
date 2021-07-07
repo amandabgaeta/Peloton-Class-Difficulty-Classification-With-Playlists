@@ -10,27 +10,30 @@ The final model has been constructed with these things in mind and classifies th
 
 ## The Data
 
-The dataset was custom made using a blend of March 2021 Peloton class data extracted using the API and posted on Reddit by okaychristinakay (AGF_Peloton Classes March.xlsx) , Kaggle datasets on Spotify artist and track data (kag_spot_artist_uris.zip, kag2_spot_artists.zipm tracks.zip), and the Spotify search API using the Spotipy package. 
+The dataset was custom made using a merging of:
+- March 2021 Peloton class data extracted using the API and posted on Reddit by okaychristinakay (AGF_Peloton Classes March.xlsx) 
+- Kaggle datasets on Spotify artist and track data (kag_spot_artist_uris.zip, kag2_spot_artists.zip, tracks.zip) and 
+- Spotify artist and track data gathered via the Spotify search API using the Spotipy package. 
 
-Recreation of the dataset can be accomplished by utilizing the files in the data/original_datasets folders and running notebooks/0_create_dataset notebooks in order. This will get you to all dfs pickled and utilized in the final model.
+Re-creation of the dataset can be accomplished by utilizing the files in the data/original_datasets folders (listed above) and running notebooks/0_create_dataset notebooks in order. This will get you to all dfs pickled and utilized in the final model.
 
 ### Data Processing
 
 Notebook.pdf includes cleansing, editing, functions, and feature engineering that was utilized in model iterations.
+Custom functions and pickle files needed to run the final notebook (1_Winning_Decision_Tree_manual.ipynb) are in /data/peloton_spotify_functions.py.
 
-Custom functions and pickle files needed are in /data/peloton_spotify_functions.py. This is run in the final notebook.
-
-The /notebooks/1_modeling folder has variations of data analysis, model approaches, and notebook iterations that were used to get to the /notebooks/1_modeling and /notebooks/2_winning models and analysis were used to get to /notebooks/3_models_with_writeups
-1_Winning_Decision_Tree_manual.ipynb.
+The /notebooks/1_modeling folder has variations of data analysis, model approaches, and notebook iterations that were used to get to the /notebooks/1_modeling and /notebooks/2_winning models and analysis were used to get to /notebooks/3_models_with_writeups.
 
 ## Model Iteration
-/notebooks/1_modeling/91_Modeling_start_manual is the notebook containing the iterative modeling process where nine different variations of data were tried across mostly untuned Decision Trees and Random Forest classifiers. Random Forest usage scored the best and is tuned in notebook 92_. After getting to a final Random Forest model, I recognized an interpretable model would be more advantageous for analysis, thus I went back and tuned the Decision Tree - making that the final product.
+/notebooks/1_modeling/91_Modeling_start_manual is the notebook containing the iterative modeling process where nine different variations of data were tried across mostly untuned Decision Trees and Random Forest classifiers. Random Forest usage scored the best and is tuned in notebook 92_. After getting to a final Random Forest model, I recognized an interpretable model would be more advantageous for analysis; thus I went back and tuned the Decision Tree - making that the final product.
 
 The model baseline accuracy from guessing the majority class was 50% (based on Intermediate classes) and was increased to 67-69% along with the f1-score, which was the goal metric.
 
 ## Data Analysis
-
-Whether a class is Low Impact, how long the class is, and whether a class is an Intervals class were the top features that drove difficulty classification in the final model.
+top features that drove difficulty classification in the final model included:
+- whether a class is Low Impact
+- how long the class is 
+- whether a class is an Intervals class were the 
 
 From the instructor perspective, Hannah Corbin was associated with Beginner rides and Robin Arzon and Olivia Amato were more likely to have Advanced rides.
 
