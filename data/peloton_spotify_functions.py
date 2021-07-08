@@ -214,7 +214,7 @@ def low_med_high_labels(series, new_column_name, df):
     df.loc[((series >= twenty_five) & (series < seventy_five)), new_column_name] = 'Medium'
     df.loc[series >= seventy_five, new_column_name] = 'High'
     
-# Plotting
+    # Plotting
 def plot_scatter(data, x, y, hue, by, legend, artist_or_song, subset_title):
     plt.figure(figsize=(20,10))
 
