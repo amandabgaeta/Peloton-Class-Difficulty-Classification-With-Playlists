@@ -8,6 +8,8 @@ A big part in selecting classes comes down to perceived difficulty based on the 
 
 The final model has been constructed with these things in mind and classifies the perceived difficulty of the class based on Peloton class data including the Spotify features of the artists and tracks from the class playlists. As this was created with those receiving their Peloton bike in mind, the dataset and model only considers Cycling classes.
 
+**Access the final model code in /pdfs/Notebook.pdf OR the Jupyter Notebook version in /notebooks/3_models_with_writeups/1_Winning_Decision_Tree_manual.ipynb.**
+
 ## The Data
 
 The dataset was custom made using a merging of:
