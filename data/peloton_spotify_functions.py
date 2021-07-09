@@ -76,6 +76,7 @@ def eval_model(estimator, X_train, X_test, y_train, y_test, target_names, averag
     
     # plot test confusion matrix
     plot_confusion_matrix(estimator, X_test, y_test, display_labels = target_names, values_format='')
+    plt.grid(False)
     plt.show()
 
 
