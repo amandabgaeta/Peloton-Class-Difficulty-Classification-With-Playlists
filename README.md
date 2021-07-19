@@ -27,7 +27,7 @@ Custom functions and pickle files needed to run the final notebook (1_Winning_De
 The /notebooks/1_modeling folder has variations of data analysis, model approaches, and notebook iterations that were used to get to the /notebooks/1_modeling and /notebooks/2_winning models and analysis were used to get to /notebooks/3_models_with_writeups.
 
 ## Model Iteration
-/notebooks/1_modeling/91_Modeling_start_manual is the notebook containing the iterative modeling process where nine different variations of data were tried across mostly untuned Decision Trees and Random Forest classifiers. Random Forest usage scored the best and is tuned in notebook 92_. After getting to a final Random Forest model, I recognized an interpretable model would be more advantageous for analysis; thus I went back and tuned the Decision Tree - making that the final product.
+/notebooks/1_modeling/91_Modeling_start_manual is the notebook containing the iterative modeling process where nine different variations of data were tried across mostly untuned Decision Trees and Random Forest classifiers. Random Forest usage scored the best and is tuned in notebook 92_. After getting to a final Random Forest model, I recognized an interpretable model would be more advantageous for analysis; thus I went back and tuned the Decision Tree in notebook 95_ - making that the final product.
 
 The model baseline accuracy from guessing the majority class was 50% (based on Intermediate classes) and was increased to 67-69% along with the f1-score, which was the goal metric.
 
